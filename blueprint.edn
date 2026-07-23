@@ -7,4 +7,42 @@
  :itonami.blueprint/governor :market-entry-compliance-governor
  :itonami.blueprint/robotics false
  :itonami.blueprint/required-technologies [:identity :forms :dmn :bpmn :audit-ledger]
- :itonami.blueprint/status :public-oss}
+ :itonami.blueprint/status :public-oss
+ :itonami.blueprint/maturity :implemented
+ :itonami.blueprint/implemented-slice
+ "MarketEntry-LLM ⊣ Market-Entry Compliance Governor, a REAL compiled
+ `kotoba-lang/langgraph` StateGraph (`:intake -> :advise -> :govern ->
+ :decide -+-> :commit / :request-approval -> :commit / :hold`), with a
+ real `interrupt-before #{:request-approval}` + in-memory checkpointer
+ pausing every `:jurisdiction/assess`/`:filing/draft`/`:filing/submit`
+ for human sign-off, and both `:commit` and `:hold` durably appending to
+ the audit ledger. `marketentry.facts` catalogs Sri Lankan (LKA)
+ market-entry law, curl-verified against the actual current primary
+ texts: National Procurement Commission (nprocom.gov.lk, Constitution
+ Art. 156B(1)/156C(1)) Procurement Guidelines - 2024 (Gazette
+ Extraordinary No. 2412/01, 25 November 2024, effective 1 January 2025)
+ -- correcting a research trap this iteration caught itself: the
+ plausible `npc.gov.lk` hostname resolves to the unrelated National
+ POLICE Commission, not the procurement body; Companies Act No. 07 of
+ 2007 Part XVI (Department of the Registrar of Companies); Inland
+ Revenue Act No. 24 of 2017 ss.102/103 (Taxpayer Identification Number,
+ Inland Revenue Department); Board of Investment Law No. 4 of 1978
+ (enacted as the Greater Colombo Economic Commission Law, renamed by Act
+ No. 49 of 1992, both OCR'd from scanned Gazette PDFs with no native
+ text layer -- an honest, disclosed lower-confidence transcription).
+ Six governor checks (spec-basis · evidence-incomplete ·
+ slicing-evades-classification against Procurement Guidelines - 2024
+ s.4.3 'Slicing and Packaging of Contracts', a CROSS-RECORD
+ aggregation-reconciliation check -- the flagship SHAPE for this
+ vertical, genuinely different from every prior sibling's single-record
+ check shapes · engagement-fee-mismatch · TIN-registration-unverified,
+ grounded in IRD/s.102-103 · already-drafted/already-submitted
+ double-actuation guards), all HARD and unoverridable;
+ `:filing/draft`/`:filing/submit` are permanently absent from every
+ phase's `:auto` set (never auto-commit, at any phase, by construction
+ -- two independent layers, `marketentry.governor`'s high-stakes gate
+ and `marketentry.phase`'s phase table, agree). Store gained a
+ `DatomicStore` via `kotoba-lang/langchain-store` (no hand-rolled
+ EDN-blob codec), proven ≡ `MemStore` by a store-contract test. `src/
+ culture/` (the pre-existing regional-culture catalog) is untouched by
+ this iteration."}
