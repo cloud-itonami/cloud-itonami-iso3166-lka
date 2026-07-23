@@ -6,10 +6,18 @@
    (route to `cloud-itonami-M6910` or local counsel first if not).
 2. Register the client's intake: business type, target public function,
    prior filing history in Sri Lanka if any.
-3. Run the advisor in read-only mode against the e-GP platform.
+3. Run the advisor in read-only mode against the National Procurement
+   Commission (NPC, `nprocom.gov.lk`)'s own Procurement Guidelines -
+   2024 (Gazette Extraordinary No. 2412/01, effective 1 January 2025).
 4. Compare the checklist against the client's current documentation
-   (eROC registration status).
-5. Enable gated filing-draft assistance once the Market-Entry Compliance
+   (eROC registration status; Inland Revenue Department TIN status).
+5. If the engagement declares itself a slice/package of a larger
+   procurement (`:sliced? true`), confirm a slicing justification is on
+   file and that the group's own declared per-slice values sum to its
+   own declared aggregate size (Procurement Guidelines - 2024 s.4.3) --
+   the Market-Entry Compliance Governor recomputes this independently
+   and HARD-holds a submit that fails either test.
+6. Enable gated filing-draft assistance once the Market-Entry Compliance
    Governor contract is trusted; actual submission always requires human
    sign-off.
 

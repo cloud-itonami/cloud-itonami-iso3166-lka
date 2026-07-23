@@ -21,15 +21,29 @@
 
 ## Offer
 
-- registration walkthrough for the e-GP (electronic Government
-  Procurement) platform, phased in per Department of Public Finance
-  directives (PFD 08/2019(ii)) for goods and services procurement, with
-  suppliers required to register to participate in tenders
+- registration walkthrough and bid-support checklist under the National
+  Procurement Commission (NPC, `nprocom.gov.lk`)'s own **Procurement
+  Guidelines - 2024 on Goods, Works, and Non-Consulting Services**
+  (Gazette Extraordinary No. 2412/01, 25 November 2024, effective 1
+  January 2025) -- this supersedes an earlier, less current pass at this
+  document, which had cited superseded "Department of Public Finance
+  directives (PFD 08/2019(ii))" framing; the NPC's own Guidelines text
+  itself states it supersedes the Procurement Guidelines - 2006 and ALL
+  related National Procurement Agency/General Treasury manuals,
+  supplements, circulars and instructions, including that framing
 - business/tax registration checklist: an entry with the Department of
-  the Registrar of Companies (DRC, established 1938) via the eROC online
-  incorporation system, under the Companies Act No. 7 of 2007
-- local-content / preferential-procurement navigation: Sri Lankan
-  public-procurement preference provisions on qualifying tenders
+  the Registrar of Companies (ROC, established 1938) via the eROC online
+  incorporation system, under the Companies Act No. 07 of 2007, plus
+  Inland Revenue Department (IRD) Taxpayer Identification Number (TIN)
+  registration under the Inland Revenue Act No. 24 of 2017 ss.102/103
+- anti-fragmentation ("slicing") reconciliation check for procurements
+  the operator itself declares as one slice/package of a larger
+  Master Procurement Plan item, per NPC Procurement Guidelines - 2024
+  s.4.3 -- this vertical's flagship governor check (see
+  `src/marketentry/registry.cljc`)
+- Board of Investment of Sri Lanka (BOI) registration walkthrough for
+  foreign-invested engagements, under the Board of Investment Law No. 4
+  of 1978 (as renamed by Act No. 49 of 1992)
 - ongoing regulatory-change monitoring subscription
 - compliance-audit export package for the client's own records
 
