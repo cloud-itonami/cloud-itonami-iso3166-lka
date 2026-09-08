@@ -1,5 +1,5 @@
 (ns marketentry.facts-test
-  (:require [clojure.string :as str]
+  (:require [kotoba.lang.text :as str]
             [clojure.test :refer [deftest is testing]]
             [marketentry.facts :as facts]))
 
