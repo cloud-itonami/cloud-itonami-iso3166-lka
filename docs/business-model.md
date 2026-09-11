@@ -40,7 +40,7 @@
   the operator itself declares as one slice/package of a larger
   Master Procurement Plan item, per NPC Procurement Guidelines - 2024
   s.4.3 -- this vertical's flagship governor check (see
-  `src/marketentry/registry.cljc`)
+  `src/marketentry/registry.cljk`)
 - Board of Investment of Sri Lanka (BOI) registration walkthrough for
   foreign-invested engagements, under the Board of Investment Law No. 4
   of 1978 (as renamed by Act No. 49 of 1992)
