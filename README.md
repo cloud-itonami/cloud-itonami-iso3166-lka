@@ -78,13 +78,13 @@ Compliance Governor**.
   Economic Commission (Amendment) Act, No. 49 of 1992 -- both
   independently OCR'd from scanned Gazette reproductions with no native
   PDF text layer, a disclosed lower-confidence transcription; see
-  `src/marketentry/facts.cljc` namespace docstring).
+  `src/marketentry/facts.cljk` namespace docstring).
 
 **Currency note**: this catalog deliberately cites the National
 Procurement Commission's own 2024/2025-vintage Procurement Guidelines
 (Gazette Extraordinary No. 2412/01, effective 1 January 2025) rather
 than the 2006-era instrument it explicitly supersedes -- every citation
-in `src/marketentry/facts.cljc` was independently fetched (`curl` +
+in `src/marketentry/facts.cljk` was independently fetched (`curl` +
 `pdftotext -layout`, or `pdftoppm` + `tesseract` OCR where a PDF had no
 text layer) and verbatim-checked against the actual government-hosted
 document, not assumed from a secondary summary. See that namespace's own
@@ -138,7 +138,7 @@ phase, by construction.** Two independent layers enforce this:
 - `marketentry.phase`'s phase table (`phase 0` through `phase 3`)
   never puts `:filing/draft` or `:filing/submit` in any phase's
   `:auto` set -- see `marketentry.phase`'s own docstring and
-  `test/marketentry/phase_test.clj`'s `filing-submit-never-auto`.
+  `test/marketentry/phase_test.cljk`'s `filing-submit-never-auto`.
 
 The actor may intake an engagement, assess a jurisdiction and draft a
 recommendation; a human market-entry operator is always the one who
@@ -196,15 +196,15 @@ clojure -M:lint        # clj-kondo (errors fail; CI mirrors this)
 
 | File | Role |
 |---|---|
-| `src/marketentry/store.cljc` | **Store** protocol -- `MemStore` ‖ `DatomicStore` (`langchain.db` + `kotoba-lang/langchain-store`, no hand-rolled EDN-blob codec) + append-only audit ledger + draft AND submit history (dual history) |
-| `src/marketentry/registry.cljc` | Filing-draft/filing-submit record construction, `engagement-fee-matches-claim?` ground-truth recompute, `slicing-classification-evaded?` flagship CROSS-RECORD aggregation-reconciliation check |
-| `src/marketentry/facts.cljc` | Per-jurisdiction market-entry regulatory catalog with an official spec-basis citation per entry, honest coverage reporting |
-| `src/marketentry/marketentryllm.cljc` | **MarketEntry-LLM** -- `mock-advisor`; intake/jurisdiction-assessment/draft/submit proposals |
-| `src/marketentry/governor.cljc` | **Market-Entry Compliance Governor** -- 5 HARD checks + 2 double-actuation guards + 1 soft (confidence/actuation gate), see Checks above |
-| `src/marketentry/phase.cljc` | **Phase 0→3** -- read-only → assisted intake → assisted assess → supervised (draft/submit always human) |
-| `src/marketentry/operation.cljc` | **OperationActor** -- langgraph StateGraph |
-| `src/marketentry/sim.cljc` | demo driver |
-| `src/statute/facts.cljc` | general compliance-law catalog (Companies Act No. 07 of 2007, Inland Revenue Act No. 24 of 2017, Board of Investment Law No. 4 of 1978) |
+| `src/marketentry/store.cljk` | **Store** protocol -- `MemStore` ‖ `DatomicStore` (`langchain.db` + `kotoba-lang/langchain-store`, no hand-rolled EDN-blob codec) + append-only audit ledger + draft AND submit history (dual history) |
+| `src/marketentry/registry.cljk` | Filing-draft/filing-submit record construction, `engagement-fee-matches-claim?` ground-truth recompute, `slicing-classification-evaded?` flagship CROSS-RECORD aggregation-reconciliation check |
+| `src/marketentry/facts.cljk` | Per-jurisdiction market-entry regulatory catalog with an official spec-basis citation per entry, honest coverage reporting |
+| `src/marketentry/marketentryllm.cljk` | **MarketEntry-LLM** -- `mock-advisor`; intake/jurisdiction-assessment/draft/submit proposals |
+| `src/marketentry/governor.cljk` | **Market-Entry Compliance Governor** -- 5 HARD checks + 2 double-actuation guards + 1 soft (confidence/actuation gate), see Checks above |
+| `src/marketentry/phase.cljk` | **Phase 0→3** -- read-only → assisted intake → assisted assess → supervised (draft/submit always human) |
+| `src/marketentry/operation.cljk` | **OperationActor** -- langgraph StateGraph |
+| `src/marketentry/sim.cljk` | demo driver |
+| `src/statute/facts.cljk` | general compliance-law catalog (Companies Act No. 07 of 2007, Inland Revenue Act No. 24 of 2017, Board of Investment Law No. 4 of 1978) |
 | `test/marketentry/*_test.clj` | governor contract · phase invariants · store parity · registry conformance · facts coverage |
 | `test/statute/*_test.clj` | statute catalog coverage/topic filters |
 
@@ -255,7 +255,7 @@ Alongside the market-entry / statute catalogs, this repo carries a
 `com-junkawasaki/root`) — national dishes, protected products, beverages,
 crafts, festivals and heritage sites for Sri Lanka:
 
-- `src/culture/facts.cljc` — the catalog, source of truth (keyed by
+- `src/culture/facts.cljk` — the catalog, source of truth (keyed by
   uppercase ISO3, mirroring `statute.facts`).
 - `schema/culture.edn` — DataScript schema.
 - `data/culture-tx.edn` — derived DataScript tx-data (regenerated from
