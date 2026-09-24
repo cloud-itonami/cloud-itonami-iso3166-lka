@@ -1,6 +1,6 @@
 (ns marketentry.facts-test
   (:require [kotoba.lang.text :as str]
-            [clojure.test :refer [deftest is testing]]
+            [kotoba.test :refer [deftest is testing]]
             [marketentry.facts :as facts]))
 
 (deftest lka-has-spec-basis
